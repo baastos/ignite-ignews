@@ -4,14 +4,9 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 
 
 import styles from './styles.module.scss'
-import { useEffect } from 'react';
 
 export function SignInButton() {
     const [session] = useSession();
-
-    console.log(session);
-
-
     return session ? (
         <button onClick={() => signOut()} className={styles.signInButton} type='button'>
             <FaGithub color="#04D361" />
